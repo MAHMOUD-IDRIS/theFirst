@@ -1,0 +1,33 @@
+body {
+    background-color: rgba(0, 255, 255, 0.61);
+    background-image: url("./resources/logo.jpg");
+    background-blend-mode: multiply;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: auto;
+    padding: 5px;
+    max-width: 320px;
+    overflow: hidden;
+}
+
+#listDisplay {
+    list-style: none;
+    padding: 5px;
+    height: 300px;
+    overflow:scroll;
+
+}
+#listDisplay li {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    align-items: center;
+    margin: 5px 0;
+}
+.logo {
+    width: 50%;
+}
+.displayRessults {
+    background-color:white;
+    
+}
