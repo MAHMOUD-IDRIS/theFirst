@@ -25,7 +25,12 @@ body {
 }
 .mid {
     width: 100%;
-    background-color: rgb(251, 246, 255);
+    background-color: rgba(255, 255, 255, 0.808);
+    background-image: url("./resources/logo.jpg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
     overflow: scroll;
     
 }
@@ -90,19 +95,28 @@ input {
     margin-top: 20px;
     border: none;
 }
-.helpVideo {
+.popup {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    z-index: 100;
+    
+}
+.daySummary {
+    padding-left: 15px;
+    background-color: white;
+}
+.hide {
     display: none;
 }
-#helpcloseBtn {
+.closepopup {
     width: 50%;
     height: 35px;
     margin: 10px;
@@ -113,4 +127,21 @@ li button {
 }
 li:hover button{
      right: 0px;
+}
+.start {
+    width: 80%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    
+}
+.start input , .start button {
+    height: 50px;
+    margin-top: 5px;
+}
+.start button {
+    border: none;
+    background-color: #51FFD6;
+    border-radius: 5px;
 }

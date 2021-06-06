@@ -8,11 +8,30 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="helpVideo">
-     <video src="./resources/demo.mp4" width="70%" controls></video>
-     <button id="helpcloseBtn">close</button>  
+    <div id="starts" class="popup ">
+        <div class="start">
+           <input type="text" placeholder="Number of people" id="numberOfPeople">
+           <input type="text" placeholder="Enter Time" id="timeStarted">
+        <button id="start">START :) </button> 
+        </div>
+        
     </div>
-    
+    <div id="helpPop" class="hide popup ">
+     <video src="./resources/demo.mp4" width="70%" controls></video>
+     <button class="closepopup">close</button>  
+    </div>
+    <div id="summrayPop" class=" hide popup ">
+        <p style="color: white">Give Each One <strong id="giveeach" style="color: white">552</strong> SR</p>
+        <ul class="daySummary">
+            <li><p>Total Cash <strong id="totalCash">0</strong></p></li>
+            <li><p>Food <strong id="carfood">0</strong></p></li>
+            <li><p>Over time <strong id="overtimeOnPop">0</strong ></p></li>
+                <li><p>expences <strong id="exp">0</strong ></p></li>
+                    <li><p>Balance <strong id="balanceOnpop">0</strong ></p></li>
+        </ul>
+        <button class="closepopup">close</button>  
+    </div>
+    </div>
   <div class="top">
       <div class="topcont">
           <div class="money">
@@ -29,7 +48,8 @@
   </div> 
   <div class="mid">
       <ul id="listDisplay">
-          <li> <p>- 30</p> <p>Food</p> <button class="remove">X</button></li>
+          <li> <p id="displayCarFood"></p> <p>Food</p> </li>
+          <li> <p id="displayCarOT"></p> <p>Over Time</p> </li>
 
           
       </ul>

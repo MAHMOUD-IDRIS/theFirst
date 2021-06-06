@@ -7,24 +7,56 @@ const listDisplay = document.getElementById('listDisplay');
 const displayIncome = document.getElementById('totalin');
 const displayExp = document.getElementById('totalExp');
 const displayBalance = document.getElementById('balance');
-
+const startBtn = document.getElementById('start');
+const numberOfPeopleInCarInput = document.getElementById('numberOfPeople');
 /* help buttons and logic  */
-const helpbtn = document.getElementById('helpbtn');
-const clseHelp = document.getElementById('helpcloseBtn');
-const helpVideo = document.getElementById('helpVideo');
-clseHelp.onclick = function(){helpVideo.style.display = "all"};
-//**help buttons and logic ^ */
+const helpbtn = document.getElementById('helpBtn');
 
+const closepopup = document.querySelectorAll('.closepopup');
+const popup = document.querySelectorAll('.popup');
+const helpPopup = document.getElementById('helpPop');
+
+closepopup.forEach(el=>{
+  el.onclick = function()
+{ 
+  el.parentElement.classList.add("hide")
+  }
+})
+helpbtn.onclick = function(){
+  helpPopup.classList.remove("hide");
+}
+//**help buttons and logic ^ */
+let numberOfPeopleInCar = 0;
+let timeStarted = 0;
+let timeBack = 0;
 let income = 0;
 let expences = 0;
+let carOverTime = 0;
+let carFood = 0;
+let giveEachone = 0;
+
+/**** test the equations */
+startBtn.onclick = function(){
+  timeStarted = document.getElementById('timeStarted').value;
+  if(numberOfPeopleInCarInput.value == ""){return}
+  numberOfPeopleInCar = numberOfPeopleInCarInput.value;
+  console.log(numberOfPeopleInCar)
+  carFood = 15 * numberOfPeopleInCar
+  displayFoodNdOvertime()
+  numberOfPeopleInCarInput.value = ""
+  document.getElementById('starts').setAttribute("class","hide");
+  expences += carFood;
+}
+
 let food = 0;
 
-let styleColor = "cyan"
+
 
 function addItem (value, option, description){
   value *= 1;
   const li = document.createElement('li');
   const numberValue = document.createElement('p');
+  numberValue.setAttribute('class', "money")
   const opt = option == "Income" ? "+" : "-" ;
     li.innerHTML = opt + "  " + value;
   const descValue = document.createElement('p');
@@ -32,7 +64,7 @@ function addItem (value, option, description){
   const btn = document.createElement('button');
   btn.innerText = "X";
   
-  
+  btn.setAttribute("class", 'removeBtn');
     //**************  operations */
 
     if(option == "Income"){
@@ -51,14 +83,60 @@ function addItem (value, option, description){
     displayIncome.innerText = income;
     displayExp.innerText = expences;
     displayBalance.innerText = income - expences;
-
+    const removeBtns = document.querySelectorAll('.removeBtn');
+    removeBtns.forEach((el)=>{
+el.onclick = function (fd){
+console.log(fd.target.parentElement.childNode);
+listDisplay.removeChild(fd.target.parentElement)
+}
+    })
 }
 
 btnAdd.onclick = function(){
+  if(addedValue.value == "") {return}
     addItem(addedValue.value, optionValue.value, desc.value);
-    
+    addedValue.value = "";
+    desc.value = ""
 };
 
 calcBtn.onclick = ()=>{
-  console.log(` this is the calculation : \n income ${income}, expences ${expences}, food ${food}, balance = ${income - expences}`);
+  timeBack = document.getElementById('timeback').value || 0;
+   if (timeStarted == 0){
+     timeStarted = 9
+   };
+   const overTIme = timeBack - timeStarted;
+   let mea = overTIme < 10 ? 0 : overTIme - 10
+   console.log("working Hours: " + mea)
+/**** */
+carOverTime = mea * 5 * numberOfPeopleInCar;
+carFood = carOverTime ? numberOfPeopleInCar * 25 : numberOfPeopleInCar * 15 ;
+const balanceOfDay =  income - expences - carOverTime;
+
+/*** displaying Values on Popup*/
+giveEach();
+  console.log(`income = ${income} \n food = ${carFood} \n over Time = ${carOverTime} \n balance = ${balanceOfDay} time back is ${timeBack} give Each one ${giveEachone}`);
+
+  document.getElementById('totalCash').innerText = income;
+  document.getElementById('carfood').innerText = carFood;
+  document.getElementById('overtimeOnPop').innerText = carOverTime;
+  document.getElementById('exp').innerText = expences;
+  document.getElementById('balanceOnpop').innerText = balanceOfDay + " SR";
+  //
+  document.getElementById('summrayPop').classList.remove('hide');
+  
 }
+
+/**dealing with popups */
+function displayFoodNdOvertime (){
+  document.getElementById('displayCarFood').innerText = "- " + carFood;
+document.getElementById('displayCarOT').innerText = "- " + carOverTime;
+}
+
+function giveEach (){
+  let give = (carFood + carOverTime - food)/numberOfPeopleInCar
+  document.getElementById('giveeach').innerText = give;
+  giveEachone = give;
+}
+
+
+
