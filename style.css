@@ -1,33 +1,93 @@
+html {
+    
+}
 body {
-    background-color: rgba(0, 255, 255, 0.61);
-    background-image: url("./resources/logo.jpg");
-    background-blend-mode: multiply;
-    text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    margin: auto;
-    padding: 5px;
     max-width: 320px;
-    overflow: hidden;
+    height: 568px;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 1fr 20px;
 }
-
-#listDisplay {
-    list-style: none;
-    padding: 5px;
-    height: 300px;
-    overflow:scroll;
-
+.top {
+    width: 100%;
+    background-color: #D498FB;
+    padding-bottom: 5px;
+    padding-top: 15px;    
 }
-#listDisplay li {
+.topcont {
+    display: grid;
+    width: 85%;
+    margin: 15px auto;
+    height: 120px;
+    gap: 2px;
+}
+.mid {
+    width: 100%;
+    background-color: rgb(251, 246, 255);
+    overflow: scroll;
+    
+}
+.money {
     display: flex;
     justify-content: space-between;
-    height: 20px;
+}
+.money input {
+    width: 70%;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    width: 90%;
+    margin: 5px auto;
+}
+ul li {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin: 5px 0;
-}
-.logo {
-    width: 50%;
-}
-.displayRessults {
-    background-color:white;
+    width: 100%;
+    height: 35px;
     
+
+}
+.bottom {
+    width: 100%;
+    background-color: #D498FB;
+    height: 30vh;
+    
+}
+#addBtn , #calcBtn {
+    background-color: #51FFD6;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px rgb(82, 82, 82);
+}
+#calcBtn {
+    background-color: #FFBED6;
+}
+.sumary {
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 0 5px;
+    color: white;
+}
+strong {
+    color: black;
+}
+input {
+    text-align: center;
+}
+.calc {
+    height: 80px;
+    width: 65%;
+    margin: auto;
+    display: grid;
+    gap: 2px;
+}
+#helpBtn {
+    margin-top: 20px;
+    border: none;
+    background-color: ;
 }

@@ -8,22 +8,50 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="displayRessults">
-        
+  <div class="top">
+      <div class="topcont">
+          <div class="money">
+           <input type="text" placeholder="SR" id="inputMoney">  
+            <select name="select" id="select">
+          <option value="Income">Income</option>
+          <option value="expence">expence</option>
+      </select> 
+          </div>
+      <input type="text" placeholder="Description of Expences">
+      <button id="addBtn">Add</button> 
+      </div>
+  </div> 
+  <div class="mid">
+      <ul>
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+          
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+          
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+          
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+          
+          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+      </ul>
+  </div>
+  <div class="bottom">
+      <div class="sumary">
+        <p>Income <strong id="totalin">5458</strong> </p>
+      <p>Expences <strong id="totalExp">5458</strong> </p>
+      <p>Balance <strong id="balance">5458</strong> </p>  
+      </div>
+      <!---->
+    <div class="calc">
+    <input type="text" placeholder="Time finished at" id="timeback">
+    <button id="calcBtn">Calculate</button> 
     </div>
-    <div class="addingVal">
-        <input id="addedValue" type="text" placeholder="SR 99599"> 
-        <select id="select">
-            <option value="income">income</option>
-            <option value="expence">expence</option>
-        </select>
-        <button id="addValue">Add</button>
-    </div>
-    <div class="displayingVal">
-        <ul id="listDisplay">
-           
-        </ul>
-    </div>
+    <button id="helpBtn">&quaternions; Help!</button>
+  </div> 
+  <footer> &copy 2021 Mahmoud</footer>
     <script src="./script.js"></script>
 </body>
 </html>
