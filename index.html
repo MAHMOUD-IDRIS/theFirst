@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <div class="helpVideo">
+     <video src="./resources/demo.mp4" width="70%" controls></video>
+     <button id="helpcloseBtn">close</button>  
+    </div>
+    
   <div class="top">
       <div class="topcont">
           <div class="money">
@@ -15,34 +20,25 @@
             <select name="select" id="select">
           <option value="Income">Income</option>
           <option value="expence">expence</option>
+          <option value="food">Food</option>
       </select> 
           </div>
-      <input type="text" placeholder="Description of Expences">
+      <input type="text" placeholder="Description of Expences" id="desc">
       <button id="addBtn">Add</button> 
       </div>
   </div> 
   <div class="mid">
-      <ul>
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
+      <ul id="listDisplay">
+          <li> <p>- 30</p> <p>Food</p> <button class="remove">X</button></li>
 
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
-
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
           
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
-          
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
-          
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
-          
-          <li> <p>+ 545620</p> <p>descriptipn</p> <button id="remove">X</button></li>
       </ul>
   </div>
   <div class="bottom">
       <div class="sumary">
-        <p>Income <strong id="totalin">5458</strong> </p>
-      <p>Expences <strong id="totalExp">5458</strong> </p>
-      <p>Balance <strong id="balance">5458</strong> </p>  
+        <p>Income <strong id="totalin">0</strong> </p>
+      <p>Expences <strong id="totalExp">0</strong> </p>
+      <p>Balance <strong id="balance">0</strong> </p>  
       </div>
       <!---->
     <div class="calc">

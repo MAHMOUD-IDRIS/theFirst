@@ -1,46 +1,64 @@
-const addedValue = document.getElementById('addedValue');
-const btnAdd = document.getElementById('addValue');
+const addedValue = document.getElementById('inputMoney');
+const btnAdd = document.getElementById('addBtn');
+const calcBtn = document.getElementById('calcBtn')
 const optionValue = document.getElementById('select');
+const descriptionValue = document.getElementById('desc')
 const listDisplay = document.getElementById('listDisplay');
+const displayIncome = document.getElementById('totalin');
+const displayExp = document.getElementById('totalExp');
+const displayBalance = document.getElementById('balance');
 
-let sumOfValues = [0];
+/* help buttons and logic  */
+const helpbtn = document.getElementById('helpbtn');
+const clseHelp = document.getElementById('helpcloseBtn');
+const helpVideo = document.getElementById('helpVideo');
+clseHelp.onclick = function(){helpVideo.style.display = "all"};
+//**help buttons and logic ^ */
+
+let income = 0;
+let expences = 0;
+let food = 0;
+
 let styleColor = "cyan"
-function addItem (value, option){
-    const li = document.createElement('li');
-    const opt = option == "income" ? "+" : "-"
-    li.innerHTML = opt + "  " + value;
-    let valued = option == "income" ? value * 1 : value * -1;
-    console.log(valued)
-    sumOfValues.push(valued);
 
-    const btn = document.createElement('button');
-    btn.innerText = "X";
-    li.style.backgroundColor = styleColor;
-    li.style.color = opt == "+" ? "black" : "red";
-    styleColor = styleColor == "cyan" ? "transparent" : "cyan";
+function addItem (value, option, description){
+  value *= 1;
+  const li = document.createElement('li');
+  const numberValue = document.createElement('p');
+  const opt = option == "Income" ? "+" : "-" ;
+    li.innerHTML = opt + "  " + value;
+  const descValue = document.createElement('p');
+  descValue.innerText = description;
+  const btn = document.createElement('button');
+  btn.innerText = "X";
+  
+  
+    //**************  operations */
+
+    if(option == "Income"){
+      income += value
+    } else if (option == "expence"){
+      expences += value
+    } else {
+      food += value;
+    }
+
+    li.appendChild(numberValue);
+    li.appendChild(descValue);
     li.appendChild(btn);
     listDisplay.appendChild(li);
-    console.log("sum " + sumOfValues)
-    let sums = sumOfValues.reduce((prev, curr)=>{
-      return prev+curr
-    } )
-    console.log(sums);
-    
+    console.log(`income ${income}, expences ${expences}, food ${food}, balance = ${income - expences}`);
+    displayIncome.innerText = income;
+    displayExp.innerText = expences;
+    displayBalance.innerText = income - expences;
+
 }
 
 btnAdd.onclick = function(){
-    addItem(addedValue.value, optionValue.value);
-    addedValue.value = "";
+    addItem(addedValue.value, optionValue.value, desc.value);
+    
 };
 
-async function f (){
-const Dat = await fetch('./data.json');
-const response = await Dat.json();
-console.log(response) 
-console.log(response.addedValues);
-response.addedValues.push(250);
-console.log(response.addedValues);
-
+calcBtn.onclick = ()=>{
+  console.log(` this is the calculation : \n income ${income}, expences ${expences}, food ${food}, balance = ${income - expences}`);
 }
-
-f();
