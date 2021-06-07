@@ -104,7 +104,9 @@ calcBtn.onclick = ()=>{
    if (timeStarted == 0){
      timeStarted = 9
    };
-   const overTIme = timeBack - timeStarted;
+   const tBack = timeBack < 6 ? timeBack*1 + 24 : timeBack;
+   console.log(`Tback is ${tBack}`)
+   const overTIme = tBack - timeStarted;
    let mea = overTIme < 10 ? 0 : overTIme - 10
    console.log("working Hours: " + mea)
 /**** */
