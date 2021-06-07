@@ -186,7 +186,7 @@ document.getElementById('deleteYes').onclick =
 deleteAll;
 function deleteAll (targeted){
   //hidePopup(targeted);
-  window.reload();
+  document.location.reload();
 }
 
 function returnNoDelete (targeted){
