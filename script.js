@@ -30,10 +30,11 @@ let numberOfPeopleInCar = 0;
 let timeStarted = 0;
 let timeBack = 0;
 let income = 0;
-let expences = 0;
 let carOverTime = 0;
 let carFood = 0;
 let giveEachone = 0;
+let food = 0;
+let expences = 0;
 
 /**** test the equations */
 startBtn.onclick = function(){
@@ -45,10 +46,10 @@ startBtn.onclick = function(){
   displayFoodNdOvertime()
   numberOfPeopleInCarInput.value = ""
   document.getElementById('starts').setAttribute("class","hide");
-  expences += carFood;
+  
 }
 
-let food = 0;
+
 
 
 
@@ -80,9 +81,10 @@ function addItem (value, option, description){
     li.appendChild(btn);
     listDisplay.appendChild(li);
     console.log(`income ${income}, expences ${expences}, food ${food}, balance = ${income - expences}`);
-    displayIncome.innerText = income;
-    displayExp.innerText = expences;
-    displayBalance.innerText = income - expences;
+     displaySubSummary ();
+
+    
+
     const removeBtns = document.querySelectorAll('.removeBtn');
     removeBtns.forEach((el)=>{
 el.onclick = function (fd){
@@ -90,6 +92,12 @@ console.log(fd.target.parentElement.childNode);
 listDisplay.removeChild(fd.target.parentElement)
 }
     })
+}
+
+function displaySubSummary (){
+  displayIncome.innerText = income;
+  displayExp.innerText = expences + carFood + carOverTime;
+  displayBalance.innerText = income - expences - carOverTime - carFood;
 }
 
 btnAdd.onclick = function(){
@@ -112,20 +120,21 @@ calcBtn.onclick = ()=>{
 /**** */
 carOverTime = mea * 5 * numberOfPeopleInCar;
 carFood = carOverTime ? numberOfPeopleInCar * 25 : numberOfPeopleInCar * 15 ;
-const balanceOfDay =  income - expences - carOverTime;
+const balanceOfDay =  income - expences - carOverTime - carFood;
 
 /*** displaying Values on Popup*/
 giveEach();
   console.log(`income = ${income} \n food = ${carFood} \n over Time = ${carOverTime} \n balance = ${balanceOfDay} time back is ${timeBack} give Each one ${giveEachone}`);
 
-  document.getElementById('totalCash').innerText = income;
-  document.getElementById('carfood').innerText = carFood;
-  document.getElementById('overtimeOnPop').innerText = carOverTime;
-  document.getElementById('exp').innerText = expences;
-  document.getElementById('balanceOnpop').innerText = balanceOfDay + " SR";
+  
+  document.getElementById('displayCarFood').innerText ="- " + carFood;
+  
+  document.getElementById('displayCarOT').innerText ="- " + carOverTime;
+  displaySumaryPopup(balanceOfDay);
   //
   document.getElementById('summrayPop').classList.remove('hide');
-  
+  consoleLog ();
+  displaySubSummary ();
 }
 
 /**dealing with popups */
@@ -142,3 +151,30 @@ function giveEach (){
 
 
 
+function displaySumaryPopup (balanceOfDay){
+  document.getElementById('totalCash').innerText = income;
+  document.getElementById('carfood').innerText = carFood;
+  document.getElementById('overtimeOnPop').innerText = carOverTime;
+  document.getElementById('exp').innerText = expences;
+  document.getElementById('balanceOnpop').innerText = balanceOfDay + " SR";
+}
+
+function consoleLog (){
+  console.log(`summary: \n 
+numberOfPeopleInCar : ${numberOfPeopleInCar} \n
+ timeStarted : ${timeStarted} \n
+ timeBack : ${timeBack} \n
+ income: ${income} \n
+ expences : ${expences} \n
+ carOverTime : ${carOverTime} \n
+ carFood : ${carFood} \n
+ giveEachone : ${giveEachone} \n
+ 
+`)
+}
+
+const reloadBTN = document.getElementById('reload');
+reloadBTN.onclick = ()=>{
+
+console.log('reloading!')
+}

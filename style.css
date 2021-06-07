@@ -8,8 +8,13 @@ body {
     display: grid;
     grid-template-rows: 1fr 1.5fr 1fr 20px;
 }
+.top , .mid , .bottom {
+    max-width: 500px;
+    margin: 0 auto;
+}
 .top {
     width: 100%;
+    
     background-color: #D498FB;
     padding-bottom: 5px;
     padding-top: 15px;    
@@ -20,6 +25,7 @@ body {
     margin: 15px auto;
     height: 120px;
     gap: 2px;
+    
 }
 .mid {
     width: 100%;
@@ -75,7 +81,8 @@ ul li {
     display: flex;
     font-size: 12px;
     justify-content: space-between;
-    padding: 0 5px;
+    padding: 0 10px;
+    margin: 0 2%;
     color: white;
 }
 strong {
@@ -98,7 +105,7 @@ input {
 .popup {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.74);
     position: absolute;
     margin: auto;
     display: flex;

@@ -10,8 +10,8 @@
 <body>
     <div id="starts" class="popup ">
         <div class="start">
-           <input type="text" placeholder="Number of people" id="numberOfPeople">
-           <input type="text" placeholder="Enter Time" id="timeStarted">
+           <input type="number" placeholder="Number of people" id="numberOfPeople">
+           <input type="number" placeholder="Enter Time Started" id="timeStarted">
         <button id="start">START :) </button> 
         </div>
         
@@ -35,7 +35,7 @@
   <div class="top">
       <div class="topcont">
           <div class="money">
-           <input type="text" placeholder="SR" id="inputMoney">  
+           <input type="number" placeholder="SR" id="inputMoney">  
             <select name="select" id="select">
           <option value="Income">Income</option>
           <option value="expence">expence</option>
@@ -48,8 +48,8 @@
   </div> 
   <div class="mid">
       <ul id="listDisplay">
-          <li> <p id="displayCarFood"></p> <p>Food</p> </li>
-          <li> <p id="displayCarOT"></p> <p>Over Time</p> </li>
+          <li style="color: rgb(175, 0, 0);"> <p id="displayCarFood"></p> <p>Food</p> </li>
+          <li style="color: rgb(175, 0, 0);"> <p id="displayCarOT"></p> <p>Over Time</p> </li>
 
           
       </ul>
@@ -62,10 +62,12 @@
       </div>
       <!---->
     <div class="calc">
-    <input type="text" placeholder="Time finished at" id="timeback">
+    <input type="number" placeholder="Time finished at" id="timeback">
     <button id="calcBtn">Calculate</button> 
     </div>
     <button id="helpBtn">&quaternions; Help!</button>
+    <button id="reload"> Clear All</button>
+    
   </div> 
   <footer> &copy 2021 Mahmoud</footer>
     <script src="./script.js"></script>
