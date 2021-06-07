@@ -173,8 +173,26 @@ numberOfPeopleInCar : ${numberOfPeopleInCar} \n
 `)
 }
 
+const deletePopUp = document.getElementById('deletePop');
 const reloadBTN = document.getElementById('reload');
 reloadBTN.onclick = ()=>{
 
 console.log('reloading!')
+deletePop.classList.remove('hide');
+}
+
+document.getElementById('deleteNo').onclick = returnNoDelete;
+document.getElementById('deleteYes').onclick =
+deleteAll;
+function deleteAll (targeted){
+  //hidePopup(targeted);
+  window.reload();
+}
+
+function returnNoDelete (targeted){
+  hidePopup(targeted)
+}
+
+function hidePopup (ele){
+  console.log(ele.target.parentElement.parentElement.classList.add('hide'))
 }

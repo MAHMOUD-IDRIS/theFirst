@@ -152,3 +152,17 @@ li:hover button{
     background-color: #51FFD6;
     border-radius: 5px;
 }
+.deleteworning {
+    background-color: azure;
+    width: 80%;
+    max-width: 250px;
+    height: 30%;
+    padding: 25px;
+    display: grid;
+    gap: 5px;
+}
+
+#deleteNo {
+    background-color: rgba(81, 255, 0, 0.856);
+}
+
