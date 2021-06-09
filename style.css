@@ -127,6 +127,7 @@ input {
     width: 50%;
     height: 35px;
     margin: 10px;
+    max-width: 200px;
 }
 li button {
     position: absolute;
@@ -138,6 +139,7 @@ li:hover button{
 .start {
     width: 80%;
     height: 160px;
+    max-width: 280px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
@@ -155,7 +157,7 @@ li:hover button{
 .deleteworning {
     background-color: azure;
     width: 80%;
-    max-width: 250px;
+    max-width: 280px;
     height: 30%;
     padding: 25px;
     display: grid;
@@ -165,4 +167,9 @@ li:hover button{
 #deleteNo {
     background-color: rgba(81, 255, 0, 0.856);
 }
-
+.daySummary {
+    max-width: 280px;
+}
+video {
+    max-width: 250px;
+}
