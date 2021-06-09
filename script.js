@@ -60,8 +60,11 @@ function addItem (value, option, description){
   numberValue.setAttribute('class', "money")
   const opt = option == "Income" ? "+" : "-" ;
     li.innerHTML = opt + "  " + value;
+    option == "food" ? li.classList.add('food'): li.classList.add('cashFlow');
+    li.value = opt == "+" ? value : value*-1;
+    console.log(li.value + " this is the value of the item")
   const descValue = document.createElement('p');
-  descValue.innerText = description;
+  descValue.innerText = description || option;
   const btn = document.createElement('button');
   btn.innerText = "X";
   
@@ -88,8 +91,16 @@ function addItem (value, option, description){
     const removeBtns = document.querySelectorAll('.removeBtn');
     removeBtns.forEach((el)=>{
 el.onclick = function (fd){
-console.log(fd.target.parentElement.childNode);
+  let deletedValue = fd.target.parentElement.value
+console.log( deletedValue+ " deleted Value");
+console.log(`list class deleted ${fd.target.parentElement.classList.value}`)
+if(fd.target.parentElement.classList.value == "food") {food += deletedValue} else {
+  deletedValue < 0 ? expences += deletedValue : income -= deletedValue;
+}
+
+
 listDisplay.removeChild(fd.target.parentElement)
+displaySubSummary();
 }
     })
 }
