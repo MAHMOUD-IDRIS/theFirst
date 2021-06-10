@@ -15,6 +15,30 @@ const helpbtn = document.getElementById('helpBtn');
 const closepopup = document.querySelectorAll('.closepopup');
 const popup = document.querySelectorAll('.popup');
 const helpPopup = document.getElementById('helpPop');
+const lang = document.getElementById('lang');
+console.log(lang)
+lang.onchange = ()=>{
+  console.log(lang.value)
+  if(lang.value == "E" ) {
+    document.location.reload();
+  }
+  if (lang.value == "A"){
+    numberOfPeopleInCarInput.placeholder = 'عدد الأفراد في السيارة';
+    document.getElementById('timeStarted').placeholder = "وقت بدء العمل";
+    document.getElementById('start').innerText = "إبدأ";
+    addedValue.placeholder = " ريال"
+    descriptionValue.placeholder = "الوصف"
+    btnAdd.innerText = "إضافة";
+    document.querySelector('.income').innerText = "دخل";
+    document.querySelector('.expence').innerText = "منصرف";
+    document.querySelector('.food').innerText = "منصرف أكل";
+    document.getElementById('timeback').placeholder = "وقت العودة";
+    calcBtn.innerText = "أحسب";
+    document.getElementById('areYouSureMsg').innerText = "هل أنت متأكد من أنك تريد مسح جميع البيانات المدخلة؟";
+   
+  }
+
+}
 
 closepopup.forEach(el=>{
   el.onclick = function()

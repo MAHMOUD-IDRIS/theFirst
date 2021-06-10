@@ -10,16 +10,23 @@
 <body>
     <div id="deletePop" class=" hide popup">
         <div class="deleteworning">
-          <p>Are you sure you want to delete all data?</p>
+          <p id="areYouSureMsg">Are you sure you want to delete all data?</p>
         <button id="deleteYes">yes</button> <button id="deleteNo">NOO!</button>  
         </div>
         
     </div>
     <div id="starts" class="popup ">
+        <div class="language">
+            <select name="lang" id="lang" style="width: 100%; margin-bottom: 2em;">
+                <option value="E">English</option>
+                <option value="A">عربي</option>
+            </select>
+        </div>
+        
         <div class="start">
            <input type="number" placeholder="Number of people" id="numberOfPeople">
            <input type="number" placeholder="Enter Time Started" id="timeStarted">
-        <button id="start">START :) </button> 
+        <button id="start">START</button> 
         </div>
         
     </div>
@@ -44,9 +51,9 @@
           <div class="money">
            <input type="number" placeholder="SR" id="inputMoney">  
             <select name="select" id="select">
-          <option value="Income">Income</option>
-          <option value="expence">expence</option>
-          <option value="food">Food</option>
+          <option class="income" value="Income">Income</option>
+          <option class="expence" value="expence">expence</option>
+          <option class="food" value="food">Food</option>
       </select> 
           </div>
       <input type="text" placeholder="Description of Expences" id="desc">
@@ -63,9 +70,9 @@
   </div>
   <div class="bottom">
       <div class="sumary">
-        <p>Income <strong id="totalin">0</strong> </p>
-      <p>Expences <strong id="totalExp">0</strong> </p>
-      <p>Balance <strong id="balance">0</strong> </p>  
+        <p class="income">Income|| <strong id="totalin">0</strong> </p>
+      <p class="expence">Expences|| <strong id="totalExp">0</strong> </p>
+      <p class="balance">Balance|| <strong id="balance">0</strong> </p>  
       </div>
       <!---->
     <div class="calc">
