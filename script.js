@@ -35,7 +35,12 @@ lang.onchange = ()=>{
     document.getElementById('timeback').placeholder = "وقت العودة";
     calcBtn.innerText = "أحسب";
     document.getElementById('areYouSureMsg').innerText = "هل أنت متأكد من أنك تريد مسح جميع البيانات المدخلة؟";
-   
+   document.getElementById('income-word').innerText = "الدخل "
+   document.getElementById('expence-word').innerText = "المنصرف "
+   document.getElementById('balance-word').innerText = "الصافي "
+   document.getElementById('car-food').innerText = "الأكل" 
+   document.getElementById('car-over').innerText = "أوفر تايم" 
+
   }
 
 }

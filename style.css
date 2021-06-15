@@ -173,3 +173,8 @@ li:hover button{
 video {
     max-width: 250px;
 }
+.sumary div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
